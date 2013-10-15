@@ -10,4 +10,5 @@
 
 @interface UIImage (Aux)
 - (UIColor *)getColorAtPoint:(CGPoint)p;
+- (CGSize)sizeThatFits:(CGSize)size;
 @end

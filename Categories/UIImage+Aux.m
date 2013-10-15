@@ -45,4 +45,24 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
+- (CGSize)sizeThatFits:(CGSize)size{
+    CGFloat w = self.size.width;
+    CGFloat h = self.size.height;
+    
+    // make sure the image is no greater than the viewable area
+    if (w > size.width) {
+        // scale the width to fit
+        h = size.width * h / w;
+        w = size.width;
+    }
+    
+    if (h > size.height) {
+        // scale the height to fit, if it still does not fit
+        w = size.height * w / h;
+        h = size.height;
+    }
+    return CGSizeMake(w, h);
+
+}
+
 @end
